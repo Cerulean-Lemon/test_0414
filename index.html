@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>별 피라미드</title>
+    <style>
+        #output {
+            font-family: monospace;
+            white-space: pre; /* 공백과 줄바꿈 유지 */
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        let output4 = "";
+
+        for (let i = 1; i < 15; i++) {
+            for (let j = 15; j > i; j--) {
+                output4 += ' '; // 일반 공백
+            }
+            for (let k = 0; k < 2 * i - 1; k++) {
+                output4 += '*';
+            }
+            output4 += '\n'; // 줄바꿈
+        }
+
+        // innerHTML로 출력하되, 줄바꿈과 공백이 유지되도록 <div>에 CSS 적용
+        document.getElementById('output').innerHTML = output4;
+    </script>
+</body>
